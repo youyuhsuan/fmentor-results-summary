@@ -1,0 +1,215 @@
+//Primary
+$Lightred: hsl(0, 100%, 67%);
+$Lightred-100: rgba(255, 87, 87, 0.1);
+$Orangeyyellow: hsl(39, 100%, 56%);
+$Orangeyyellow-100: hsl(39, 100%, 56%, 0.1);
+$Greenteal: hsl(166, 100%, 37%);
+$Greenteal-100: hsl(166, 100%, 37%, 0.1);
+$Cobaltblue: hsl(234, 85%, 45%);
+$Cobaltblue-100: hsl(234, 85%, 45%, 0.1);
+
+// Gradients
+$Lightslateblue: hsl(252, 100%, 67%);
+$Lightroyalblue: hsl(241, 81%, 54%);
+
+$Violetblue: hsla(256, 72%, 46%, 1);
+$Persianblue: hsla(241, 72%, 46%, 0);
+
+// Neutral
+$White: hsl(0, 0%, 100%);
+$Paleblue: hsl(221, 100%, 96%);
+$Lightlavender: hsl(241, 100%, 89%);
+$Darkgrayblue: hsl(224, 30%, 27%);
+$Darkgrayblue-600: hsl(224, 30%, 27%, 0.6);
+
+@import "./reset.scss";
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+@font-face {
+  src: url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk");
+  font-family: "Hanken Grotesk";
+}
+
+body {
+  font-family: "Hanken Grotesk";
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  @include media-breakpoint-up(lg) {
+    justify-content: center;
+  }
+}
+
+.row.mb-5 {
+  background-color: $White;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  @include media-breakpoint-up(lg) {
+    width: 51%;
+    border-radius: 8%;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .col.text-center {
+    background: linear-gradient(0deg, $Lightroyalblue, $Lightslateblue);
+    padding: 1.6em;
+    border-radius: 0% 0% 10% 10%;
+    @include media-breakpoint-up(lg) {
+      height: 32em;
+      padding: 2.5em;
+      border-radius: 8%;
+    }
+
+    h3 {
+      font-size: 1em;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      color: $Lightlavender;
+      margin-bottom: 1.8em;
+      @include media-breakpoint-up(lg) {
+        margin-bottom: 1.2em;
+        font-size: 1.4em;
+      }
+    }
+
+    .circle {
+      box-sizing: border-box;
+      background: linear-gradient(0deg, $Persianblue, $Violetblue);
+      width: 140px;
+      height: 140px;
+      margin: 0em auto 1.2em;
+
+      @include media-breakpoint-up(lg) {
+        width: 200px;
+        height: 200px;
+        margin: 0em auto 1.6em;
+      }
+
+      h1 {
+        padding-top: 1em;
+        font-weight: 500;
+        @include media-breakpoint-up(lg) {
+          padding-top: 0.7em;
+        }
+      }
+      p {
+        color: $Lightslateblue;
+      }
+    }
+
+    h2 {
+      font-weight: 500;
+      padding-bottom: 0.4em;
+    }
+    span {
+      width: max-width;
+      color: $Lightlavender;
+      letter-spacing: -0.02em;
+      line-height: -0.01em;
+      font-weight: 500;
+      @include media-breakpoint-up(lg) {
+        letter-spacing: 0.1em;
+      }
+    }
+  }
+
+  .col {
+    padding: 1em 1.5em;
+    height: 440px;
+    @include media-breakpoint-up(lg) {
+      height: 32em;
+      padding: 2.5em;
+    }
+
+    h3 {
+      font-size: 1.4em;
+      color: $Darkgrayblue;
+      font-weight: 700;
+      margin-bottom: 1em;
+    }
+
+    .flexitem-1 {
+      background-color: $Lightred-100;
+      .flextitle {
+        color: $Lightred;
+        font-weight: 500;
+        &::before {
+          content: url("../assets/images/icon-reaction.svg");
+          padding-right: 0.8em;
+          vertical-align: -16%;
+        }
+      }
+    }
+
+    .flexitem-2 {
+      background-color: $Orangeyyellow-100;
+      .flextitle {
+        color: $Orangeyyellow;
+        font-weight: 500;
+        &::before {
+          content: url("../assets/images/icon-memory.svg");
+          padding-right: 0.8em;
+          vertical-align: -16%;          vertical-align: -16%;
+        }
+      }
+    }
+
+    .flexitem-3 {
+      background-color: $Greenteal-100;
+      .flextitle {
+        color: $Greenteal;
+        font-weight: 500;
+        &::before {
+          content: url("../assets/images/icon-verbal.svg");
+          padding-right: 0.8em;
+          vertical-align: -16%;
+        }
+      }
+    }
+
+    .flexitem-4 {
+      background-color: $Cobaltblue-100;
+      margin-bottom: 1.2em;
+      .flextitle {
+        color: $Cobaltblue;
+        font-weight: 500;
+        &::before {
+          content: url("../assets/images/icon-visual.svg");
+          padding-right: 0.8em;
+          vertical-align: -16%;
+        }
+      }
+
+      @include media-breakpoint-up(lg) {
+        margin-bottom: 2.5em;
+      }
+    }
+
+    .number {
+      color: $Darkgrayblue;
+      font-weight: 800;
+      letter-spacing: 0.01em;
+    }
+
+    .percent-sign {
+      color: $Darkgrayblue-600;
+      font-weight: 700;
+      margin-left: 0.25em;
+    }
+
+    button {
+      background-color: $Darkgrayblue;
+      font-weight: 700;
+      font-size: 1em;
+      color: $Paleblue;
+    }
+  }
+}
